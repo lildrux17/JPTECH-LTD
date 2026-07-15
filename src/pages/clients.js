@@ -15,8 +15,12 @@ function clients() {
     <main class="flex-grow bg-[#f7f9fb] text-[#191c1e] font-sans">
       
       <!-- HERO BANNER SECTION -->
-      <section class="bg-[#000615] pt-24 pb-20 px-6 text-white text-center md:text-left">
-        <div class="max-w-7xl mx-auto">
+      <section class="relative bg-[#000615] pt-28 pb-24 px-6 text-white text-center md:text-left overflow-hidden">
+        <div class="absolute inset-0 z-0">
+          <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.13.jpeg" alt="Corporate Partnership Background" class="w-full h-full object-cover opacity-40">
+          <div class="absolute inset-0 bg-[#000615]/70"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto">
           <span class="inline-block text-[10px] font-bold tracking-widest text-[#fea619] uppercase bg-white/5 border border-[#fea619]/20 px-3 py-1 rounded-[0.15rem] mb-4">
             Global Partnership
           </span>
@@ -30,12 +34,12 @@ function clients() {
           <!-- Key Metrics Ledger Bar -->
           <div class="flex items-center gap-6 border-t border-slate-800 pt-6 max-w-md mx-auto md:mx-0">
             <div>
-              <span class="text-xl md:text-2xl font-black text-white">15+</span>
+              <span class="text-xl md:text-2xl font-black text-white">10+</span>
               <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Years of Expertise</span>
             </div>
             <div class="h-8 w-px bg-slate-800"></div>
             <div>
-              <span class="text-xl md:text-2xl font-black text-white">200+</span>
+              <span class="text-xl md:text-2xl font-black text-white">20+</span>
               <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Successful Projects</span>
             </div>
           </div>
@@ -120,10 +124,6 @@ function clients() {
                 </p>
               </div>
             </div>
-
-            <a href="#/projects" class="inline-flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-[#855300] hover:text-[#000615] transition-colors mt-8">
-              View All Case Studies <span class="text-xs">→</span>
-            </a>
           </div>
 
         </div>
@@ -139,10 +139,10 @@ function clients() {
             Join our portfolio of industry leaders and experience the JPTECH standard of engineering excellence and professional reliability.
           </p>
           <div class="flex flex-wrap justify-center gap-4">
-            <a href="#/contact" class="px-6 py-3 bg-[#fea619] hover:bg-[#e09110] text-[#000615] text-xs font-bold uppercase tracking-wider rounded-[0.25rem] transition-colors shadow-sm">
+            <a href="/contact" data-link class="px-6 py-3 bg-[#fea619] hover:bg-[#e09110] text-[#000615] text-xs font-bold uppercase tracking-wider rounded-[0.25rem] transition-colors shadow-sm">
               Work With Us
             </a>
-            <a href="#/services" class="px-6 py-3 bg-transparent hover:bg-white/5 border border-white/20 text-white text-xs font-bold uppercase tracking-wider rounded-[0.25rem] transition-colors">
+            <a href="/services" data-link class="px-6 py-3 bg-transparent hover:bg-white/5 border border-white/20 text-white text-xs font-bold uppercase tracking-wider rounded-[0.25rem] transition-colors">
               Our Services
             </a>
           </div>

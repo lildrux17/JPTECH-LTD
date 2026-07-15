@@ -65,14 +65,16 @@ function project() {
   return `
     <main class="flex-grow bg-[#f7f9fb] text-[#191c1e] font-sans">
       
-      <section class="relative bg-[#000615] py-24 px-6 overflow-hidden">
+      <section class="relative bg-[#000615] pt-36 pb-36 px-6 overflow-hidden min-h-[620px]">
         <div class="absolute inset-0 z-0">
-          <img src="/src/assets/home.jpg" alt="JPTECH Operations Site Background" class="w-full h-full object-cover opacity-25">
+          <video autoplay muted loop playsinline poster="/src/assets/WhatsApp Image 2026-06-23 at 15.03.24.jpeg" class="w-full h-full object-cover">
+            <source src="/src/assets/WhatsApp Video 2026-06-23 at 15.03.22.mp4" type="video/mp4" />
+          </video>
           <div class="absolute inset-0 bg-[#000615]/70"></div>
         </div>
         <div class="relative z-10 max-w-7xl mx-auto text-center md:text-left">
           <span class="text-xs font-bold tracking-widest text-[#fea619] uppercase block mb-2">Field Implementations Log</span>
-          <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">Active Operations Portfolio</h1>
+          <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tight">Active Operations Portfolio</h1>
         </div>
       </section>
 

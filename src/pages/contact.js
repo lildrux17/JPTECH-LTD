@@ -9,9 +9,6 @@ function contact() {
           <div class="absolute inset-0 bg-[#000615]/70"></div>
         </div>
         <div class="relative z-10 max-w-7xl mx-auto text-center md:text-left">
-          <span class="inline-block text-[10px] font-bold tracking-widest text-[#fea619] uppercase bg-white/5 border border-[#fea619]/20 px-3 py-1 rounded-[0.15rem] mb-3">
-            Established Precision
-          </span>
           <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight mb-4">
             Connect with Industrial Expertise
           </h1>
@@ -35,7 +32,7 @@ function contact() {
 
           <!-- Card 1: Email -->
           <div class="p-5 bg-white border border-slate-200 rounded-[0.25rem] shadow-sm flex items-center gap-4">
-            <div class="w-10 h-10 bg-[#000615] flex items-center justify-center rounded-[0.15rem] shrink-0">
+            <div class="w-10 h-10 bg-[#855300] flex items-center justify-center rounded-[0.15rem] shrink-0">
               <span class="text-white text-xs">✉</span>
             </div>
             <div>
@@ -46,7 +43,7 @@ function contact() {
 
           <!-- Card 2: Phone -->
           <div class="p-5 bg-white border border-slate-200 rounded-[0.25rem] shadow-sm flex items-center gap-4">
-            <div class="w-10 h-10 bg-[#000615] flex items-center justify-center rounded-[0.15rem] shrink-0">
+            <div class="w-10 h-10 bg-[#855300] flex items-center justify-center rounded-[0.15rem] shrink-0">
               <span class="text-white text-xs">📞</span>
             </div>
             <div>
@@ -57,12 +54,12 @@ function contact() {
 
           <!-- Card 3: Physical Address Base -->
           <div class="p-5 bg-white border border-slate-200 rounded-[0.25rem] shadow-sm flex items-center gap-4">
-            <div class="w-10 h-10 bg-[#000615] flex items-center justify-center rounded-[0.15rem] shrink-0">
+            <div class="w-10 h-10 bg-[#855300] flex items-center justify-center rounded-[0.15rem] shrink-0">
               <span class="text-white text-xs">📍</span>
             </div>
             <div>
               <span class="text-[9px] font-bold uppercase text-slate-400 block tracking-wider mb-0.5">Regional Office</span>
-              <p class="text-xs font-black text-[#000615] uppercase tracking-tight leading-tight">Accra, Ghana</p>
+              <p class="text-xs font-black text-[#000615] uppercase tracking-tight leading-tight">Tarkwa, Ghana</p>
               <span class="text-[10px] text-[#44474d] block">West African Industrial Hub</span>
             </div>
           </div>
@@ -71,11 +68,6 @@ function contact() {
           <a href="https://wa.me/233242445491" target="_blank" class="w-full flex items-center justify-center gap-2 bg-[#1ed760] hover:bg-[#1abe54] text-white font-bold uppercase tracking-wider text-[11px] py-4 rounded-[0.25rem] transition-colors shadow-sm">
             <span>💬</span> Message on WhatsApp
           </a>
-
-          <!-- Safety Certifications Verification Tag -->
-          <div class="inline-flex items-center gap-2 text-[9px] font-bold uppercase tracking-wider text-[#44474d] bg-slate-100 border border-slate-200 px-3 py-1.5 rounded-[0.15rem]">
-            <span class="text-amber-600">🛡</span> ISO 9001:2015 Certified Facility
-          </div>
         </div>
 
         <!-- RIGHT COLUMN: STRUCTURED INQUIRY LEDGER FORM -->
@@ -128,7 +120,7 @@ function contact() {
 
             <!-- Submit Action Key -->
             <button type="submit" class="w-full bg-[#000615] hover:bg-slate-800 text-white font-bold uppercase tracking-wider text-[10px] py-4 rounded-[0.25rem] transition-colors flex items-center justify-center gap-2">
-              Submit Project Specification <span>→</span>
+              Request Quote <span>→</span>
             </button>
 
             <!-- Metadata Timestamp Support -->

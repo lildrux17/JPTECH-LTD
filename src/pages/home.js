@@ -17,13 +17,13 @@ function home() {
             Geomembrane Liners & <br><span class="text-[#fea619]">Civil Construction</span>
           </h1>
           <p class="text-sm md:text-base text-slate-300 max-w-2xl mb-8 leading-relaxed">
-            Based in Tarkwa, JPTECH Enterprise specializes in the professional deployment of flexible geomembrane liners, floating covers, material supply, and structural civil solutions across premium mining environments.
+            Based in Tarkwa, JPTECH  specializes in the professional deployment of flexible geomembrane liners, floating covers, material supply, and structural civil solutions across premium mining environments.
           </p>
           <div class="flex flex-wrap justify-center md:justify-start gap-4">
-            <a href="/service" class="bg-[#855300] hover:bg-[#684000] text-white text-xs font-bold uppercase tracking-wider px-6 py-4 rounded-[0.25rem] shadow-md border-b-2 border-black/40 transition-all active:translate-y-px">
+            <a href="/services" data-link class="bg-[#855300] hover:bg-[#684000] text-white text-xs font-bold uppercase tracking-wider px-6 py-4 rounded-[0.25rem] shadow-md border-b-2 border-black/40 transition-all active:translate-y-px">
               Our Capabilities
             </a>
-            <a href="/contacts" class="bg-[#0b1f3a] hover:bg-[#132d4e] text-white text-xs font-bold uppercase tracking-wider px-6 py-4 rounded-[0.25rem] border border-slate-700 transition-all">
+            <a href="/contact" data-link class="bg-[#0b1f3a] hover:bg-[#132d4e] text-white text-xs font-bold uppercase tracking-wider px-6 py-4 rounded-[0.25rem] border border-slate-700 transition-all">
               Request Assessment
             </a>
           </div>
@@ -65,7 +65,7 @@ function home() {
           <span class="text-xs font-bold tracking-widest text-[#855300] uppercase block mb-2">Corporate Profile</span>
           <h2 class="text-3xl font-black text-[#000615] uppercase tracking-tight mb-6">About JPTECH</h2>
           <p class="text-xs md:text-sm text-[#44474d] leading-relaxed mb-4">
-            JPTECH Enterprise is a specialized containment and engineering firm operating from the growing mining hub of Tarkwa. We deliver expert flexible geomembrane liners, floating covers, professional material configurations, precise infrastructure adjustments, and dedicated consulting frameworks.
+            JPTECH is a specialized containment and engineering firm operating from the growing mining hub of Tarkwa. We deliver expert flexible geomembrane liners, floating covers, professional material configurations, precise infrastructure adjustments, and dedicated consulting frameworks.
           </p>
           <p class="text-xs md:text-sm text-[#44474d] leading-relaxed mb-6 font-medium text-[#000615]">
             Our philosophy focuses tightly on a dedicated team-approach. We systematically prioritize the client's long-term containment security and project requirements by implementing transparent, continuous, and open reporting tracks across all milestones.

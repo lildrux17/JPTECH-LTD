@@ -3,14 +3,16 @@ function service() {
   return `
     <main class="flex-grow bg-[#f7f9fb] text-[#191c1e] font-sans">
       
-      <section class="relative bg-[#000615] py-24 px-6 overflow-hidden">
+      <section class="relative bg-[#000615] pt-36 pb-36 px-6 overflow-hidden min-h-[620px]">
         <div class="absolute inset-0 z-0">
-          <img src="/src/assets/home.jpg" alt="JPTECH Engineering Services Industrial Background" class="w-full h-full object-cover opacity-25">
+          <video autoplay muted loop playsinline poster="/src/assets/WhatsApp Image 2026-06-23 at 15.03.22.jpeg" class="w-full h-full object-cover">
+            <source src="/src/assets/WhatsApp Video 2026-06-23 at 15.03.31.mp4" type="video/mp4" />
+          </video>
           <div class="absolute inset-0 bg-[#000615]/70"></div>
         </div>
         <div class="relative z-10 max-w-7xl mx-auto text-center md:text-left">
           <span class="text-xs font-bold tracking-widest text-[#fea619] uppercase block mb-2">Core Capabilities Portfolio</span>
-          <h1 class="text-3xl md:text-5xl font-black text-white uppercase tracking-tight">Industrial Technical Services</h1>
+          <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tight">Industrial Technical Services</h1>
         </div>
       </section>
 
@@ -19,7 +21,7 @@ function service() {
           <span class="text-xs font-bold tracking-widest text-[#855300] uppercase block mb-1">Specialization 01</span>
           <h2 class="text-2xl font-black text-[#000615] uppercase tracking-tight mb-6">Geomembrane & Liner Deployments</h2>
           <p class="text-xs md:text-sm text-[#44474d] leading-relaxed mb-6">
-            JPTECH Enterprise engineers premium containment architectures built to isolate hazardous compounds and secure vital resources safely. Our field deployment squads handle full-scale logistics and professional placement tasks across heavy containment corridors.
+            JPTECH engineers premium containment architectures built to isolate hazardous compounds and secure vital resources safely. Our field deployment squads handle full-scale logistics and professional placement tasks across heavy containment corridors.
           </p>
           
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -88,7 +90,7 @@ function service() {
           <span class="text-xs font-bold tracking-widest text-[#855300] uppercase block mb-1">Specialization 03</span>
           <h2 class="text-2xl font-black text-[#000615] uppercase tracking-tight mb-6">Civil & Structural Construction</h2>
           <p class="text-xs md:text-sm text-[#44474d] leading-relaxed mb-6">
-            Beyond industrial textiles, JPTECH Enterprise maintains full-scale heavy civil support workflows. From structural anchors to complex ground leveling, we configure safe bases for critical installations.
+            Beyond industrial textiles, JPTECH maintains full-scale heavy civil support workflows. From structural anchors to complex ground leveling, we configure safe bases for critical installations.
           </p>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
