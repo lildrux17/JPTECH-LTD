@@ -44,6 +44,7 @@ async function handleContactSubmit(event) {
     _subject: `New JPTECH inquiry from ${formData.get("name") || "website visitor"}`,
     _template: "table",
     _captcha: "false",
+    _replyto: formData.get("email") || "",
     ...Object.fromEntries(formData.entries()),
   };
 
@@ -200,17 +201,24 @@ function contact() {
                 <label class="block text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Your Name</label>
                 <input type="text" id="name" name="name" required placeholder="Full Name" class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors">
               </div>
+              <!-- Field: Email Address -->
+              <div>
+                <label class="block text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="you@example.com" class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <!-- Field: Contact Number -->
               <div>
                 <label class="block text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Contact Number</label>
                 <input type="tel" id="contactNumber" name="contactNumber" required placeholder="+233..." class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors">
               </div>
-            </div>
-
-            <!-- Field: Project Details Area -->
-            <div>
-              <label class="block text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Project Details</label>
-              <textarea id="details" name="details" rows="4" required placeholder="Briefly describe the scope of work and technical requirements..." class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors resize-none"></textarea>
+              <!-- Field: Project Details Area -->
+              <div>
+                <label class="block text-sm font-bold uppercase tracking-widest text-slate-400 mb-1">Project Details</label>
+                <textarea id="details" name="details" rows="4" required placeholder="Briefly describe the scope of work and technical requirements..." class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors resize-none"></textarea>
+              </div>
             </div>
 
             <div id="contact-status" class="text-sm text-slate-500"></div>

@@ -1,6 +1,18 @@
 import { asset } from "../utils/assets.js";
+import logoCarousel from "../component/logoCarousel.js";
 
 function home() {
+  const partnerLogos = [
+    { name: "Genser", logo: "genser company.jpg" },
+    { name: "E&P Engineers and Planner", logo: "E&pLOGO.jpg" },
+    { name: "Rabotech Ghana", logo: "rabotech.jpg" },
+    { name: "De-Namud", logo: "denamud.png" },
+    { name: "Geoblast", logo: "geoplast.png" },
+    { name: "Itema", logo: "ITEMA.jpg" },
+    { name: "Kamit Services", logo: "kamit-logo.jpg" },
+    { name: "Isometrick Company Limited", logo: "isometric.png" }
+  ];
+
   return `
     <main class="flex-grow bg-[#f7f9fb] text-[#191c1e] font-sans">
       
@@ -128,22 +140,7 @@ function home() {
         </div>
       </section>
 
-      <!-- LOGO MARQUEE FOR TRUSTED CLIENT MARKS -->
-      <section class="bg-slate-100 border-t border-slate-200 py-16 px-6">
-        <div class="max-w-6xl mx-auto text-center">
-          <span class="text-sm font-bold uppercase tracking-widest text-slate-400 block mb-8">Corporate Subcontract Networks & Partners</span>
-          <div class="flex flex-wrap justify-center items-center gap-4 md:gap-6 opacity-85 grayscale hover:grayscale-0 transition-all">
-            <span class="bg-white border border-slate-200 text-sm font-black tracking-wider text-[#000615] px-4 py-2.5 rounded-[0.25rem] shadow-sm">GENSER</span>
-            <span class="bg-white border border-slate-200 text-sm font-black tracking-wider text-[#000615] px-4 py-2.5 rounded-[0.25rem] shadow-sm">MEDITERRANEAN PROJECT LTD</span>
-            <span class="bg-white border border-slate-200 text-sm font-black tracking-wider text-[#000615] px-4 py-2.5 rounded-[0.25rem] shadow-sm">RABOTECH GHANA LTD</span>
-            <span class="bg-white border border-slate-200 text-sm font-black tracking-wider text-[#000615] px-4 py-2.5 rounded-[0.25rem] shadow-sm">DE-NAMUD COMPANY</span>
-            <span class="bg-white border border-slate-200 text-sm font-black tracking-wider text-[#000615] px-4 py-2.5 rounded-[0.25rem] shadow-sm">GECOBLAST COMPANY</span>
-            <span class="bg-white border border-slate-200 text-sm font-black tracking-wider text-[#000615] px-4 py-2.5 rounded-[0.25rem] shadow-sm">ITEMA COMPANY</span>
-            <span class="bg-white border border-slate-200 text-sm font-black tracking-wider text-[#000615] px-4 py-2.5 rounded-[0.25rem] shadow-sm">GROUP FIVE CONSTRUCTION</span>
-            <span class="bg-white border border-slate-200 text-sm font-black tracking-wider text-[#000615] px-4 py-2.5 rounded-[0.25rem] shadow-sm">ISOMETRICK CO. LTD</span>
-          </div>
-        </div>
-      </section>
+      ${logoCarousel(partnerLogos)}
 
     </main>
   `;

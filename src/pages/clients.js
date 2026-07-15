@@ -2,15 +2,16 @@ import { asset } from "../utils/assets.js";
 
 function clients() {
   // Extracted partners directly from the corporate layout blueprint
+  // Use asset helper for all image sources to ensure correct bundling/paths
   const partnerList = [
-    { name: "Mediterranean Project Limited", subtext: "Structural Logistics", logo: "/assets/logo-mediterranean.png" },
-    { name: "De-Namud", subtext: "Heavy Fabrication", logo: "/assets/image_ebfcf7.png" },
-    { name: "Geoblast", subtext: "Surface Engineering", logo: "/assets/logo-geoblast.png" },
-    { name: "Itema", subtext: "Advanced Machinery", logo: "/assets/logo-itema.png" },
-    { name: "Genser", subtext: "Power Solutions", logo: "/assets/logo-genser.png" },
-    { name: "Rabotech Ghana", subtext: "Mining Support", logo: "/assets/logo-rabotech.png" },
-    { name: "Kamit Services", subtext: "Consulting & Supply", logo: "/assets/logo-kamit.png" },
-    { name: "Isometrick Company Limited", subtext: "Precision Drafting", logo: "/assets/logo-isometrick.png" }
+    { name: "E&P", subtext: "Engineers and Planner", logo: "E&pLOGO.jpg" },
+    { name: "De-Namud", subtext: "Heavy Fabrication", logo: "denamud.png" },
+    { name: "Geoblast", subtext: "Surface Engineering", logo: "geoplast.png" },
+    { name: "Itema", subtext: "Advanced Machinery", logo: "ITEMA.jpg" },
+    { name: "Genser", subtext: "Power Solutions", logo: "genser company.jpg" },
+    { name: "Rabotech Ghana", subtext: "Mining Support", logo: "rabotech.jpg" },
+    { name: "Kamit Services", subtext: "Consulting & Supply", logo: "kamit-logo.jpg" },
+    { name: "Isometrick Company Limited", subtext: "Precision Drafting", logo: "isometric.png" }
   ];
 
   return `
@@ -71,7 +72,7 @@ function clients() {
             <div class="bg-white border border-slate-200 rounded-[0.25rem] p-6 shadow-sm flex flex-col items-center text-center justify-between min-h-[180px]">
               <!-- Mock Image Logo Container -->
               <div class="h-16 w-full flex items-center justify-center bg-slate-50 border border-slate-100 rounded-[0.15rem] p-2 mb-4">
-                <img src="${partner.logo}" alt="${partner.name} logo asset" class="max-h-full max-w-full object-contain filter grayscale opacity-75 group-hover:opacity-100 mix-blend-multiply" onerror="this.style.display='none'">
+                <img src="${asset(partner.logo)}" alt="${partner.name} logo asset" class="max-h-full max-w-full object-contain filter grayscale opacity-75 group-hover:opacity-100 mix-blend-multiply" onerror="this.style.display='none'">
               </div>
               <div>
                 <h3 class="text-sm font-black text-[#000615] uppercase tracking-tight mb-1">
