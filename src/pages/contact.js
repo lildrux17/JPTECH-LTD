@@ -1,3 +1,55 @@
+function showContactModal() {
+  const modal = document.getElementById("contact-modal");
+  if (modal) {
+    modal.classList.remove("hidden");
+  }
+}
+
+function closeContactModal() {
+  const modal = document.getElementById("contact-modal");
+  if (modal) {
+    modal.classList.add("hidden");
+  }
+}
+
+function handleContactSubmit(event) {
+  event.preventDefault();
+
+  const form = event.currentTarget;
+  const formData = {
+    projectName: form.projectName?.value?.trim() || "Not provided",
+    serviceType: form.serviceType?.value || "Not specified",
+    name: form.name?.value?.trim() || "Not provided",
+    contactNumber: form.contactNumber?.value?.trim() || "Not provided",
+    details: form.details?.value?.trim() || "No additional details provided",
+  };
+
+  const subject = `JPTECH Inquiry: ${formData.projectName}`;
+  const body = [
+    `Project Name: ${formData.projectName}`,
+    `Service Type: ${formData.serviceType}`,
+    `Name: ${formData.name}`,
+    `Contact Number: ${formData.contactNumber}`,
+    `Project Details: ${formData.details}`,
+  ].join("\n");
+
+  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=jptech67@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  const popup = window.open(gmailUrl, "_blank", "noopener,noreferrer");
+
+  if (!popup) {
+    window.location.href = gmailUrl;
+  }
+
+  const statusBox = document.getElementById("contact-status");
+  if (statusBox) {
+    statusBox.textContent = "Your inquiry has been prepared in Gmail. Please review and send it to complete the request.";
+    statusBox.className = "text-sm font-semibold text-[#855300] mt-2";
+  }
+
+  showContactModal();
+  form.reset();
+}
+
 function contact() {
   return `
     <main class="flex-grow bg-[#f7f9fb] text-[#191c1e] font-sans">
@@ -76,19 +128,19 @@ function contact() {
           
           <h3 class="text-2xl md:text-3xl font-black text-[#000615] uppercase tracking-tight mb-6">Inquiry Form</h3>
           
-          <form class="space-y-4" onsubmit="event.preventDefault();">
+          <form class="space-y-4" onsubmit="handleContactSubmit(event)">
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <!-- Field: Project Name -->
               <div>
                 <label class="block text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Project Name</label>
-                <input type="text" placeholder="e.g. Obuasi Site Expansion" class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors">
+                <input type="text" id="projectName" name="projectName" required placeholder="e.g. Obuasi Site Expansion" class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors">
               </div>
               <!-- Field: Service Selector -->
               <div>
                 <label class="block text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Service Type</label>
                 <div class="relative">
-                  <select class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm appearance-none focus:outline-none focus:border-[#000615] transition-colors">
+                  <select id="serviceType" name="serviceType" class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm appearance-none focus:outline-none focus:border-[#000615] transition-colors">
                     <option>Structural Engineering</option>
                     <option>Geomembrane Installation</option>
                     <option>Remedial Maintenance</option>
@@ -103,20 +155,22 @@ function contact() {
               <!-- Field: Your Name -->
               <div>
                 <label class="block text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Your Name</label>
-                <input type="text" placeholder="Full Name" class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors">
+                <input type="text" id="name" name="name" required placeholder="Full Name" class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors">
               </div>
               <!-- Field: Contact Number -->
               <div>
                 <label class="block text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Contact Number</label>
-                <input type="tel" placeholder="+233..." class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors">
+                <input type="tel" id="contactNumber" name="contactNumber" required placeholder="+233..." class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors">
               </div>
             </div>
 
             <!-- Field: Project Details Area -->
             <div>
               <label class="block text-sm font-bold uppercase tracking-wider text-slate-400 mb-1">Project Details</label>
-              <textarea rows="4" placeholder="Briefly describe the scope of work and technical requirements..." class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors resize-none"></textarea>
+              <textarea id="details" name="details" rows="4" required placeholder="Briefly describe the scope of work and technical requirements..." class="w-full bg-slate-50 border border-slate-200 rounded-[0.15rem] p-3 text-sm focus:outline-none focus:border-[#000615] transition-colors resize-none"></textarea>
             </div>
+
+            <div id="contact-status" class="text-sm text-slate-500"></div>
 
             <!-- Submit Action Key -->
             <button type="submit" class="w-full bg-[#000615] hover:bg-slate-800 text-white font-bold uppercase tracking-wider text-sm py-4 rounded-[0.25rem] transition-colors flex items-center justify-center gap-2">
@@ -131,6 +185,21 @@ function contact() {
           </form>
         </div>
       </section>
+
+      <div id="contact-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-[#000615]/70 px-4">
+        <div class="bg-white rounded-[0.25rem] shadow-2xl max-w-md w-full p-6 border border-slate-200">
+          <div class="flex items-center justify-between mb-4">
+            <h4 class="text-xl font-black uppercase tracking-tight text-[#000615]">Email Draft Ready</h4>
+            <button type="button" onclick="closeContactModal()" class="text-slate-400 hover:text-[#000615] text-2xl leading-none">×</button>
+          </div>
+          <p class="text-sm md:text-base text-[#44474d] leading-relaxed mb-4">
+            Your inquiry has been prepared in your email app. Please review the message and click send to complete your request.
+          </p>
+          <button type="button" onclick="closeContactModal()" class="w-full bg-[#855300] hover:bg-[#684000] text-white font-bold uppercase tracking-wider text-sm py-3 rounded-[0.25rem] transition-colors">
+            Close
+          </button>
+        </div>
+      </div>
 
       <!-- BOTTOM INTERACTIVE CARTOGRAPHY AREA -->
       <section class="max-w-7xl mx-auto px-6 pb-20">
