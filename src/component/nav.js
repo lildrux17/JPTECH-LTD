@@ -1,19 +1,21 @@
 function Nav() {
-    const path = window.location.pathname;
+    const path = window.location.pathname.replace(/\/+$/, "") || "/";
+
     const isActive = (href) => {
-        if (href === "/") return path === "/" || path === "/home";
-        return path === href;
+        const normalizedHref = href === "/" ? "/" : href.replace(/\/+$/, "");
+        if (normalizedHref === "/") return path === "/" || path === "/home";
+        return path === normalizedHref || path.startsWith(`${normalizedHref}/`);
     };
 
     const linkClass = (href) => {
-        const base = "transition-colors py-2 border-b-2 border-transparent hover:border-[#fea619]";
+        const base = "transition-all py-2 border-b-2 border-transparent hover:border-[#fea619]";
         return isActive(href)
-            ? `text-white border-[#fea619] ${base}`
+            ? `text-[#fea619] font-semibold border-[#fea619] ${base}`
             : `text-slate-300 hover:text-[#fea619] ${base}`;
     };
 
     const contactButtonClass = isActive("/contact")
-        ? "bg-[#684000] text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-[0.25rem] shadow-md border-b-2 border-black/40 transition-all"
+        ? "bg-[#fea619] text-[#000615] text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-[0.25rem] shadow-md border-b-2 border-black/40 transition-all"
         : "bg-[#855300] hover:bg-[#684000] text-white text-xs font-bold uppercase tracking-wider px-5 py-2.5 rounded-[0.25rem] shadow-md border-b-2 border-black/40 active:translate-y-px transition-all";
 
     return `
@@ -57,31 +59,31 @@ function Nav() {
             <ul class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide">
 
                 <li>
-                    <a href="/" data-link class="${linkClass('/')}">
+                    <a href="/" data-link class="${linkClass('/')}" ${isActive('/') ? 'aria-current="page"' : ''}>
                         Home
                     </a>
                 </li>
 
                 <li>
-                    <a href="/about" data-link class="${linkClass('/about')}">
+                    <a href="/about" data-link class="${linkClass('/about')}" ${isActive('/about') ? 'aria-current="page"' : ''}>
                         About Us
                     </a>
                 </li>
 
                 <li>
-                    <a href="/services" data-link class="${linkClass('/services')}">
+                    <a href="/services" data-link class="${linkClass('/services')}" ${isActive('/services') ? 'aria-current="page"' : ''}>
                         Services
                     </a>
                 </li>
 
                 <li>
-                    <a href="/projects" data-link class="${linkClass('/projects')}">
+                    <a href="/projects" data-link class="${linkClass('/projects')}" ${isActive('/projects') ? 'aria-current="page"' : ''}>
                         Projects
                     </a>
                 </li>
 
                 <li>
-                    <a href="/clients" data-link class="${linkClass('/clients')}">
+                    <a href="/clients" data-link class="${linkClass('/clients')}" ${isActive('/clients') ? 'aria-current="page"' : ''}>
                         Clients
                     </a>
                 </li>
@@ -107,27 +109,27 @@ function Nav() {
         <div id="mobile-menu" class="md:hidden hidden bg-[#000615] px-6 py-4">
             <ul class="flex flex-col gap-3 text-sm font-medium tracking-wide">
                 <li>
-                    <a href="/" data-link class="${linkClass('/')}">
+                    <a href="/" data-link class="${linkClass('/')}" ${isActive('/') ? 'aria-current="page"' : ''}>
                         Home
                     </a>
                 </li>
                 <li>
-                    <a href="/about" data-link class="${linkClass('/about')}">
+                    <a href="/about" data-link class="${linkClass('/about')}" ${isActive('/about') ? 'aria-current="page"' : ''}>
                         About Us
                     </a>
                 </li>
                 <li>
-                    <a href="/services" data-link class="${linkClass('/services')}">
+                    <a href="/services" data-link class="${linkClass('/services')}" ${isActive('/services') ? 'aria-current="page"' : ''}>
                         Services
                     </a>
                 </li>
                 <li>
-                    <a href="/projects" data-link class="${linkClass('/projects')}">
+                    <a href="/projects" data-link class="${linkClass('/projects')}" ${isActive('/projects') ? 'aria-current="page"' : ''}>
                         Projects
                     </a>
                 </li>
                 <li>
-                    <a href="/clients" data-link class="${linkClass('/clients')}">
+                    <a href="/clients" data-link class="${linkClass('/clients')}" ${isActive('/clients') ? 'aria-current="page"' : ''}>
                         Clients
                     </a>
                 </li>

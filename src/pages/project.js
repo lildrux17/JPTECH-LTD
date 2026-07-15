@@ -73,7 +73,7 @@ function project() {
           <div class="absolute inset-0 bg-[#000615]/70"></div>
         </div>
         <div class="relative z-10 max-w-7xl mx-auto text-center md:text-left">
-          <span class="text-xs font-bold tracking-widest text-[#fea619] uppercase block mb-2">Field Implementations Log</span>
+          <span class="text-sm font-bold tracking-widest text-[#fea619] uppercase block mb-2">Field Implementations Log</span>
           <h1 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tight">Active Operations Portfolio</h1>
         </div>
       </section>
@@ -82,19 +82,19 @@ function project() {
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
           <div class="bg-white p-4 border border-slate-200 rounded-[0.25rem] shadow-sm">
             <div class="text-xl font-black text-[#000615]">100%</div>
-            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Destructive Weld Compliance</div>
+            <div class="text-sm text-slate-400 font-bold uppercase tracking-wider">Destructive Weld Compliance</div>
           </div>
           <div class="bg-white p-4 border border-slate-200 rounded-[0.25rem] shadow-sm">
-            <div class="text-xl font-black text-[#000615]">GhIE</div>
-            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Trained Site Supervision</div>
+            <div class="text-2xl font-black text-[#000615]">GhIE</div>
+            <div class="text-sm text-slate-400 font-bold uppercase tracking-wider">Trained Site Supervision</div>
           </div>
           <div class="bg-white p-4 border border-slate-200 rounded-[0.25rem] shadow-sm">
-            <div class="text-xl font-black text-[#000615]">0 / Leak</div>
-            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Containment Target Metrics</div>
+            <div class="text-2xl font-black text-[#000615]">0 / Leak</div>
+            <div class="text-sm text-slate-400 font-bold uppercase tracking-wider">Containment Target Metrics</div>
           </div>
           <div class="bg-white p-4 border border-slate-200 rounded-[0.25rem] shadow-sm">
-            <div class="text-xl font-black text-[#000615]">HDPE</div>
-            <div class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Premium Certified Seaming</div>
+            <div class="text-2xl font-black text-[#000615]">HDPE</div>
+            <div class="text-sm text-slate-400 font-bold uppercase tracking-wider">Premium Certified Seaming</div>
           </div>
         </div>
       </section>
@@ -112,17 +112,17 @@ function project() {
                   loading="lazy"
                 >
                 <div class="absolute inset-0 bg-gradient-to-t from-[#000615]/40 to-transparent"></div>
-                <span class="absolute top-4 left-4 bg-[#0b1f3a] text-white text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-[0.15rem]">
+                <span class="absolute top-4 left-4 bg-[#0b1f3a] text-white text-sm font-bold uppercase tracking-wider px-2.5 py-1 rounded-[0.15rem]">
                   ${proj.category}
                 </span>
               </div>
 
               <div class="p-6 flex-grow flex flex-col justify-between">
                 <div>
-                  <h3 class="text-base font-black text-[#000615] uppercase tracking-tight mb-2">
+                  <h3 class="text-xl font-black text-[#000615] uppercase tracking-tight mb-2">
                     ${proj.title}
                   </h3>
-                  <p class="text-[11px] md:text-xs text-[#44474d] leading-relaxed mb-6">
+                  <p class="text-sm md:text-base text-[#44474d] leading-relaxed mb-6">
                     ${proj.description}
                   </p>
                 </div>
@@ -130,9 +130,9 @@ function project() {
                 <div class="flex items-center justify-between border-t border-slate-100 pt-4 mt-auto">
                   <div class="flex items-center gap-1.5">
                     <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse"></span>
-                    <span class="text-[10px] font-bold uppercase tracking-wider text-[#44474d]">Active Deployment Log</span>
+                    <span class="text-sm font-bold uppercase tracking-wider text-[#44474d]">Active Deployment Log</span>
                   </div>
-                  <span class="text-[9px] font-mono text-slate-400 uppercase">Tarkwa Hub Operations Base</span>
+                  <span class="text-sm font-mono text-slate-400 uppercase">Tarkwa Hub Operations Base</span>
                 </div>
               </div>
 
@@ -143,8 +143,8 @@ function project() {
 
       <section class="bg-white border-t border-slate-200 py-16 px-6 text-center">
         <div class="max-w-3xl mx-auto">
-          <h4 class="text-xs font-bold uppercase text-[#000615] tracking-wider mb-2">Technical Standards Validation Framework</h4>
-          <p class="text-[11px] text-[#44474d] leading-relaxed">
+          <h4 class="text-sm font-bold uppercase text-[#000615] tracking-wider mb-2">Technical Standards Validation Framework</h4>
+          <p class="text-sm md:text-base text-[#44474d] leading-relaxed">
             All documented site operations are conducted by specialized personnel under active compliance guidelines from the Ghana Institution of Engineers (GhIE), the South African Institute of Draughting (SAID), and direct De-Namud Quality Control programs.
           </p>
         </div>
