@@ -1,3 +1,5 @@
+import { asset } from "../utils/assets.js";
+
 function Nav() {
     const path = window.location.pathname.replace(/\/+$/, "") || "/";
 
@@ -46,7 +48,7 @@ function Nav() {
 
             <!-- Logo -->
             <a href="/" data-link class="flex items-center gap-3 group">
-                <img src="./public/jptech icon.svg" alt="JPTECH" class="h-10 w-auto object-contain rounded-[0.25rem]">
+                <img src="${asset("logo.png")}" alt="JPTECH" class="h-10 w-auto object-contain rounded-[0.25rem]">
 
                 <div class="flex flex-col border-l border-slate-700 pl-3">
                     <span class="text-lg font-bold tracking-tight uppercase leading-none text-white group-hover:text-[#fea619] transition-colors">

@@ -1,14 +1,16 @@
+import { asset } from "../utils/assets.js";
+
 function clients() {
   // Extracted partners directly from the corporate layout blueprint
   const partnerList = [
-    { name: "Mediterranean Project Limited", subtext: "Structural Logistics", logo: "/src/assets/logo-mediterranean.png" },
-    { name: "De-Namud", subtext: "Heavy Fabrication", logo: "/src/assets/image_ebfcf7.png" },
-    { name: "Geoblast", subtext: "Surface Engineering", logo: "/src/assets/logo-geoblast.png" },
-    { name: "Itema", subtext: "Advanced Machinery", logo: "/src/assets/logo-itema.png" },
-    { name: "Genser", subtext: "Power Solutions", logo: "/src/assets/logo-genser.png" },
-    { name: "Rabotech Ghana", subtext: "Mining Support", logo: "/src/assets/logo-rabotech.png" },
-    { name: "Kamit Services", subtext: "Consulting & Supply", logo: "/src/assets/logo-kamit.png" },
-    { name: "Isometrick Company Limited", subtext: "Precision Drafting", logo: "/src/assets/logo-isometrick.png" }
+    { name: "Mediterranean Project Limited", subtext: "Structural Logistics", logo: "/assets/logo-mediterranean.png" },
+    { name: "De-Namud", subtext: "Heavy Fabrication", logo: "/assets/image_ebfcf7.png" },
+    { name: "Geoblast", subtext: "Surface Engineering", logo: "/assets/logo-geoblast.png" },
+    { name: "Itema", subtext: "Advanced Machinery", logo: "/assets/logo-itema.png" },
+    { name: "Genser", subtext: "Power Solutions", logo: "/assets/logo-genser.png" },
+    { name: "Rabotech Ghana", subtext: "Mining Support", logo: "/assets/logo-rabotech.png" },
+    { name: "Kamit Services", subtext: "Consulting & Supply", logo: "/assets/logo-kamit.png" },
+    { name: "Isometrick Company Limited", subtext: "Precision Drafting", logo: "/assets/logo-isometrick.png" }
   ];
 
   return `
@@ -17,7 +19,7 @@ function clients() {
       <!-- HERO BANNER SECTION -->
       <section class="relative bg-[#000615] pt-28 pb-24 px-6 text-white text-center md:text-left overflow-hidden">
         <div class="absolute inset-0 z-0">
-          <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.13.jpeg" alt="Corporate Partnership Background" class="w-full h-full object-cover opacity-40">
+          <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.13.jpeg")}" alt="Corporate Partnership Background" class="w-full h-full object-cover opacity-40">
           <div class="absolute inset-0 bg-[#000615]/70"></div>
         </div>
         <div class="relative z-10 max-w-7xl mx-auto">
@@ -90,7 +92,7 @@ function clients() {
           
           <!-- Image Box + Overlay Badge -->
           <div class="lg:col-span-6 relative rounded-[0.25rem] overflow-hidden shadow-md h-80 bg-slate-900">
-            <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.11.jpeg" alt="Industrial Processing Infrastructure" class="w-full h-full object-cover opacity-80">
+            <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.11.jpeg")}" alt="Industrial Processing Infrastructure" class="w-full h-full object-cover opacity-80">
             <!-- Floating Overlay Segment Card -->
             <div class="absolute bottom-4 left-4 right-4 bg-[#000615]/95 border border-slate-800 p-5 rounded-[0.15rem] text-white">
               <span class="text-sm font-bold text-[#fea619] tracking-widest uppercase block mb-1">ISO Certified Project</span>

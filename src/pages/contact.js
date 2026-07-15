@@ -1,3 +1,5 @@
+import { asset } from "../utils/assets.js";
+
 function showContactToast(message, isError = false) {
   const toast = document.getElementById("contact-toast");
   const title = document.getElementById("contact-toast-title");
@@ -37,14 +39,22 @@ async function handleContactSubmit(event) {
   }
 
   const formData = new FormData(form);
+  const action = form.getAttribute("action") || "https://formsubmit.co/ajax/jptech67@gmail.com";
+  const payload = {
+    _subject: `New JPTECH inquiry from ${formData.get("name") || "website visitor"}`,
+    _template: "table",
+    _captcha: "false",
+    ...Object.fromEntries(formData.entries()),
+  };
 
   try {
-    const response = await fetch("/", {
+    const response = await fetch(action, {
       method: "POST",
       headers: {
-        "Content-Type": "application/x-www-form-urlencoded",
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
-      body: new URLSearchParams(formData).toString(),
+      body: JSON.stringify(payload),
     });
 
     if (!response.ok) {
@@ -66,13 +76,13 @@ async function handleContactSubmit(event) {
 
     if (statusBox) {
       statusBox.textContent =
-        "Unable to send the inquiry. If you're running locally, Netlify Forms will not work.";
+        "Unable to send the inquiry right now. Please try again in a moment or contact us directly.";
       statusBox.className =
         "text-sm font-semibold text-red-600 mt-2";
     }
 
     showContactToast(
-      "Form submission failed. Netlify Forms only work after deployment.",
+      "Form submission failed. Please try again in a moment or contact us directly.",
       true
     );
   }
@@ -88,7 +98,7 @@ function contact() {
       <!-- HERO HEADER AREA -->
       <section class="relative bg-[#000615] py-24 px-6 overflow-hidden">
         <div class="absolute inset-0 z-0">
-          <img src="/src/assets/about.jpg" alt="JPTECH Connect Header Background" class="w-full h-full object-cover opacity-25">
+          <img src="${asset("about.jpg")}" alt="JPTECH Connect Header Background" class="w-full h-full object-cover opacity-25">
           <div class="absolute inset-0 bg-[#000615]/70"></div>
         </div>
         <div class="relative z-10 max-w-7xl mx-auto text-center md:text-left">
@@ -160,7 +170,7 @@ function contact() {
           <h3 class="text-2xl md:text-3xl font-black text-[#000615] uppercase tracking-tight mb-6">Inquiry Form</h3>
           
           <!-- Netlify Specific Form Attributes Added: data-netlify="true" and name="contact" -->
-                    <form class="space-y-4" name="contact" method="POST" data-netlify="true" netlify action="/"onsubmit="handleContactSubmit(event)">
+                    <form class="space-y-4" name="contact" method="POST" data-netlify="true" action="https://formsubmit.co/ajax/jptech67@gmail.com" onsubmit="handleContactSubmit(event)">
             <input type="hidden" name="form-name" value="contact" />
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">

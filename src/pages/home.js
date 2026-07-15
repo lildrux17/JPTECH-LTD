@@ -1,3 +1,5 @@
+import { asset } from "../utils/assets.js";
+
 function home() {
   return `
     <main class="flex-grow bg-[#f7f9fb] text-[#191c1e] font-sans">
@@ -5,7 +7,7 @@ function home() {
       <!-- HERO SECTION MAIN BANNER -->
       <section class="relative bg-[#000615] min-h-[85vh] flex items-center px-6 py-20 overflow-hidden">
         <div class="absolute inset-0 z-0">
-          <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.13.jpeg" alt="JPTECH Heavy Installation Site" class="w-full h-full object-cover opacity-40">
+          <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.13.jpeg")}" alt="JPTECH Heavy Installation Site" class="w-full h-full object-cover opacity-40">
           <div class="absolute inset-0 bg-gradient-to-r from-[#000615] via-[#000615]/80 to-transparent"></div>
         </div>
 
@@ -46,8 +48,8 @@ function home() {
         </div>
 
         <div class="lg:col-span-5 grid grid-cols-2 gap-4">
-          <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.13 (1).jpeg" alt="HDPE Sheet Welding Operation" class="w-full h-64 object-cover rounded-[0.25rem] shadow border border-slate-200">
-          <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.13 (2).jpeg" alt="JPTECH Engineering Crew Assembly" class="w-full h-64 object-cover rounded-[0.25rem] shadow border border-slate-200">
+          <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.13 (1).jpeg")}" alt="HDPE Sheet Welding Operation" class="w-full h-64 object-cover rounded-[0.25rem] shadow border border-slate-200">
+          <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.13 (2).jpeg")}" alt="JPTECH Engineering Crew Assembly" class="w-full h-64 object-cover rounded-[0.25rem] shadow border border-slate-200">
         </div>
       </section>
 
@@ -70,7 +72,7 @@ function home() {
                   Expert laying of premium containment systems engineered specifically for high-demand leach pads, specialized holding ponds, floating cover components, and treatment plants.
                 </p>
               </div>
-              <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.15.jpeg" alt="Liner Seaming Setup" class="w-full h-44 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
+              <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.15.jpeg")}" alt="Liner Seaming Setup" class="w-full h-44 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
             </div>
 
             <!-- FIELD 2 -->
@@ -82,7 +84,7 @@ function home() {
                   Comprehensive engineering fields including industrial earthworks layout, precise concrete footings alignment, structural grouting systems, tiling, and expert site labor supply.
                 </p>
               </div>
-              <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.15 (1).jpeg" alt="Civil Foundation Frameworks" class="w-full h-44 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
+              <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.15 (1).jpeg")}" alt="Civil Foundation Frameworks" class="w-full h-44 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
             </div>
 
             <!-- FIELD 3 -->
@@ -94,7 +96,7 @@ function home() {
                   Personnel hold verified field certifications from GhIE / SAID in Geosynthetics and Soil Reinforcement, alongside advanced De-Namud training profiles for extrusion and wedge welding layouts.
                 </p>
               </div>
-              <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.21.jpeg" alt="Extrusion Seam Welding Diagnostics" class="w-full h-44 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
+              <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.21.jpeg")}" alt="Extrusion Seam Welding Diagnostics" class="w-full h-44 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
             </div>
           </div>
         </div>
@@ -110,17 +112,17 @@ function home() {
 
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           <div class="bg-white p-3 border border-slate-200 rounded-[0.25rem] shadow-sm">
-            <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.21 (1).jpeg" alt="HDPE Alignment Action" class="w-full h-52 object-cover rounded-[0.15rem] mb-3">
+            <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.21 (1).jpeg")}" alt="HDPE Alignment Action" class="w-full h-52 object-cover rounded-[0.15rem] mb-3">
             <span class="text-sm font-bold uppercase tracking-wider text-[#855300]">Mining Leach Pads & Infrastructure</span>
           </div>
 
           <div class="bg-white p-3 border border-slate-200 rounded-[0.25rem] shadow-sm">
-            <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.21 (2).jpeg" alt="Precision Seam Calibration" class="w-full h-52 object-cover rounded-[0.15rem] mb-3">
+            <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.21 (2).jpeg")}" alt="Precision Seam Calibration" class="w-full h-52 object-cover rounded-[0.15rem] mb-3">
             <span class="text-sm font-bold uppercase tracking-wider text-[#855300]">Water Treatment & Holding Ponds</span>
           </div>
 
           <div class="bg-white p-3 border border-slate-200 rounded-[0.25rem] shadow-sm">
-            <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.22.jpeg" alt="HDPE Geomembrane Seam Checks" class="w-full h-52 object-cover rounded-[0.15rem] mb-3">
+            <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.22.jpeg")}" alt="HDPE Geomembrane Seam Checks" class="w-full h-52 object-cover rounded-[0.15rem] mb-3">
             <span class="text-sm font-bold uppercase tracking-wider text-[#855300]">Remedial Repairs & System Relining</span>
           </div>
         </div>

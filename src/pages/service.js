@@ -1,12 +1,14 @@
 
+import { asset } from "../utils/assets.js";
+
 function service() {
   return `
     <main class="flex-grow bg-[#f7f9fb] text-[#191c1e] font-sans">
       
       <section class="relative bg-[#000615] pt-36 pb-36 px-6 overflow-hidden min-h-[620px]">
         <div class="absolute inset-0 z-0">
-          <video autoplay muted loop playsinline poster="/src/assets/WhatsApp Image 2026-06-23 at 15.03.22.jpeg" class="w-full h-full object-cover">
-            <source src="/src/assets/WhatsApp Video 2026-06-23 at 15.03.31.mp4" type="video/mp4" />
+          <video autoplay muted loop playsinline poster="${asset("WhatsApp Image 2026-06-23 at 15.03.22.jpeg")}" class="w-full h-full object-cover">
+            <source src="${asset("WhatsApp Video 2026-06-23 at 15.03.31.mp4")}" type="video/mp4" />
           </video>
           <div class="absolute inset-0 bg-[#000615]/70"></div>
         </div>
@@ -41,14 +43,14 @@ function service() {
         </div>
         
         <div class="lg:col-span-5">
-          <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.15.jpeg" alt="Liner Seaming Alignment Setup" class="w-full h-80 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
+          <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.15.jpeg")}" alt="Liner Seaming Alignment Setup" class="w-full h-80 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
         </div>
       </section>
 
       <section class="bg-white border-t border-b border-slate-200 py-20 px-6">
         <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div class="lg:col-span-5 order-last lg:order-first">
-            <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.21.jpeg" alt="Extrusion Seam Welding Diagnostics" class="w-full h-80 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
+            <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.21.jpeg")}" alt="Extrusion Seam Welding Diagnostics" class="w-full h-80 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
           </div>
 
           <div class="lg:col-span-7">
@@ -126,7 +128,7 @@ function service() {
         </div>
 
         <div class="lg:col-span-5">
-          <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.15 (1).jpeg" alt="Civil Foundations and Base Prep" class="w-full h-80 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
+          <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.15 (1).jpeg")}" alt="Civil Foundations and Base Prep" class="w-full h-80 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
         </div>
       </section>
 

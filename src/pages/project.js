@@ -1,64 +1,66 @@
+import { asset } from "../utils/assets.js";
+
 function project() {
   const projectsList = [
     {
       title: "Mining Leach Pads & Secure Base Isolation",
       category: "Mining Infrastructure",
       description: "Heavy-duty geomembrane deployments engineered explicitly for robust chemical containment, soil preservation, and absolute leakage prevention under high load capacities.",
-      image: "/src/assets/WhatsApp Image 2026-06-23 at 15.03.21 (1).jpeg"
+      image: asset("WhatsApp Image 2026-06-23 at 15.03.21 (1).jpeg")
     },
     {
       title: "Industrial Ponds & Processing Water Treatment",
       category: "Water Treatment & Ponds",
       description: "Large-scale synthetic liner installations built for continuous municipal filtration, raw water processing plants, and custom floating barrier control configurations.",
-      image: "/src/assets/WhatsApp Image 2026-06-23 at 15.03.21 (2).jpeg"
+      image: asset("WhatsApp Image 2026-06-23 at 15.03.21 (2).jpeg")
     },
     {
       title: "Remedial Infrastructure Overhauls & Relining",
       category: "Maintenance & Repairs",
       description: "Rapid-response localized patch management, subsoil protection restoration, cut extensions, and complete structural system overhauls to stop leaks instantly.",
-      image: "/src/assets/WhatsApp Image 2026-06-23 at 15.03.22.jpeg"
+      image: asset("WhatsApp Image 2026-06-23 at 15.03.22.jpeg")
     },
     {
       title: "HDPE Sheet Thermal Calibration & Thermal Seaming",
       category: "Quality Assurance",
       description: "On-site destructive testing and high-temperature thermal wedge tracking to eliminate micro-punctures and guarantee flawless containment integrity.",
-      image: "/src/assets/WhatsApp Image 2026-06-23 at 15.03.11 (1).jpeg"
+      image: asset("WhatsApp Image 2026-06-23 at 15.03.11 (1).jpeg")
     },
     {
       title: "Industrial Ground Preparation & Subgrade Grading",
       category: "Civil Earthworks",
       description: "Precision rock clearings, soil compaction runs, and deep anchor trench digging to establish smooth, risk-free foundations prior to liner deployment.",
-      image: "/src/assets/WhatsApp Image 2026-06-23 at 15.03.15 (1).jpeg"
+      image: asset("WhatsApp Image 2026-06-23 at 15.03.15 (1).jpeg")
     },
     {
       title: "Extrusion Seam Welding Diagnostics",
       category: "Quality Control",
       description: "Handheld extrusion bead welding implementations over intricate pipe penetrations, corners, and patch edges to seal hard-to-reach containment junctions.",
-      image: "/src/assets/WhatsApp Image 2026-06-23 at 15.03.21.jpeg"
+      image: asset("WhatsApp Image 2026-06-23 at 15.03.21.jpeg")
     },
     {
       title: "Liner Panel Deployment & Alignment Sequencing",
       category: "Field Operations",
       description: "Strategic unrolling and alignment stabilization of master HDPE rolls across sloped containment walls to maximize material yields and reduce stress wrinkles.",
-      image: "/src/assets/WhatsApp Image 2026-06-23 at 15.03.15.jpeg"
+      image: asset("WhatsApp Image 2026-06-23 at 15.03.15.jpeg")
     },
     {
       title: "Corporate Field Inspection & Technical Surveys",
       category: "Consultancy",
       description: "Preconstruction layout surveying and physical liner health monitoring assessments by certified engineers to identify structural reinforcement points.",
-      image: "/src/assets/WhatsApp Image 2026-06-23 at 15.03.11.jpeg"
+      image: asset("WhatsApp Image 2026-06-23 at 15.03.11.jpeg")
     },
     {
       title: "Heavy Anchoring Channel Foundations",
       category: "Structural Works",
       description: "Executing structural concrete footings, ballast anchor assemblies, and high-grade grouting to permanently lock upper geomembrane boundaries in place.",
-      image: "/src/assets/WhatsApp Image 2026-06-23 at 15.03.08.jpeg"
+      image: asset("WhatsApp Image 2026-06-23 at 15.03.08.jpeg")
     },
     {
       title: "Site Handover Validation Checks",
       category: "Client Review",
       description: "Final air-pressure channel testing and spark testing logs mapped across all structural seams to verify zero-leak containment compliance before asset filling.",
-      image: "/src/assets/WhatsApp Image 2026-06-23 at 15.03.10.jpeg"
+      image: asset("WhatsApp Image 2026-06-23 at 15.03.10.jpeg")
     }
   ];
 
@@ -67,8 +69,8 @@ function project() {
       
       <section class="relative bg-[#000615] pt-36 pb-36 px-6 overflow-hidden min-h-[620px]">
         <div class="absolute inset-0 z-0">
-          <video autoplay muted loop playsinline poster="/src/assets/WhatsApp Image 2026-06-23 at 15.03.24.jpeg" class="w-full h-full object-cover">
-            <source src="/src/assets/WhatsApp Video 2026-06-23 at 15.03.22.mp4" type="video/mp4" />
+          <video autoplay muted loop playsinline poster="${asset("WhatsApp Image 2026-06-23 at 15.03.24.jpeg")}" class="w-full h-full object-cover">
+            <source src="${asset("WhatsApp Video 2026-06-23 at 15.03.22.mp4")}" type="video/mp4" />
           </video>
           <div class="absolute inset-0 bg-[#000615]/70"></div>
         </div>

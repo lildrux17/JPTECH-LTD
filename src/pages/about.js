@@ -1,3 +1,5 @@
+import { asset } from "../utils/assets.js";
+
 function about() {
   return `
     <main class="flex-grow bg-[#f7f9fb] text-[#191c1e] font-sans">
@@ -5,7 +7,7 @@ function about() {
       <!-- HERO BANNER SECTION -->
       <section class="relative bg-[#000615] pt-36 pb-32 px-6 overflow-hidden min-h-[520px]">
         <div class="absolute inset-0 z-0">
-          <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.23.jpeg" alt="Corporate construction and geomembrane operations" class="w-full h-full object-cover opacity-70">
+          <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.23.jpeg")}" alt="Corporate construction and geomembrane operations" class="w-full h-full object-cover opacity-70">
           <div class="absolute inset-0 bg-[#000615]/75"></div>
         </div>
         <div class="relative z-10 max-w-7xl mx-auto text-center md:text-left">
@@ -71,8 +73,8 @@ function about() {
 
         <!-- RIGHT IMAGES PANEL -->
         <div class="lg:col-span-5 grid grid-cols-1 gap-4">
-          <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.11.jpeg" alt="JPTECH Engineering Infrastructure Field Operations" class="w-full h-64 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
-          <img src="/src/assets/WhatsApp Image 2026-06-23 at 15.03.11 (1).jpeg" alt="Industrial Liners Installation Deployment" class="w-full h-64 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
+          <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.11.jpeg")}" alt="JPTECH Engineering Infrastructure Field Operations" class="w-full h-64 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
+          <img src="${asset("WhatsApp Image 2026-06-23 at 15.03.11 (1).jpeg")}" alt="Industrial Liners Installation Deployment" class="w-full h-64 object-cover rounded-[0.25rem] border border-slate-200 shadow-sm">
         </div>
       </section>
 

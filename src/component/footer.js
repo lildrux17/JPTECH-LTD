@@ -1,3 +1,5 @@
+import { asset } from "../utils/assets.js";
+
 function footer() {
   return `
     <footer class="bg-[#000615] text-white border-t-4 border-[#855300] pt-12 pb-6 font-sans">
@@ -5,7 +7,7 @@ function footer() {
         
         <div class="flex flex-col gap-4">
           <div class="flex items-center gap-3">
-            <img src="./public/jptech icon.svg" alt="JPTECH " class="h-8 w-auto object-contain rounded-[0.25rem]">
+            <img src="${asset("logo.png")}" alt="JPTECH" class="h-8 w-auto object-contain rounded-[0.25rem]">
             <span class="text-md font-bold tracking-wider uppercase text-white">JPTECH</span>
           </div>
           <p class="text-xs text-[#7587a7] leading-relaxed">
