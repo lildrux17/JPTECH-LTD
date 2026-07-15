@@ -1,54 +1,85 @@
-function showContactModal() {
-  const modal = document.getElementById("contact-modal");
-  if (modal) {
-    modal.classList.remove("hidden");
+function showContactToast(message, isError = false) {
+  const toast = document.getElementById("contact-toast");
+  const title = document.getElementById("contact-toast-title");
+  const body = document.getElementById("contact-toast-body");
+
+  if (toast && title && body) {
+    title.textContent = isError ? "Submission issue" : "Inquiry sent";
+    body.textContent = message;
+    toast.className = `fixed bottom-4 right-4 z-50 max-w-sm w-[calc(100%-2rem)] items-center justify-between gap-3 rounded-[0.25rem] border px-4 py-3 text-white shadow-2xl ${isError ? "border-red-500 bg-red-600" : "border-[#fea619] bg-[#000615]"}`;
+    toast.classList.remove("hidden");
+    toast.classList.add("flex");
+    clearTimeout(window.contactToastTimer);
+    window.contactToastTimer = setTimeout(() => {
+      toast.classList.add("hidden");
+      toast.classList.remove("flex");
+    }, 5000);
   }
 }
 
-function closeContactModal() {
-  const modal = document.getElementById("contact-modal");
-  if (modal) {
-    modal.classList.add("hidden");
+function closeContactToast() {
+  const toast = document.getElementById("contact-toast");
+  if (toast) {
+    toast.classList.add("hidden");
+    toast.classList.remove("flex");
   }
 }
 
-function handleContactSubmit(event) {
+async function handleContactSubmit(event) {
   event.preventDefault();
 
   const form = event.currentTarget;
-  const formData = {
-    projectName: form.projectName?.value?.trim() || "Not provided",
-    serviceType: form.serviceType?.value || "Not specified",
-    name: form.name?.value?.trim() || "Not provided",
-    contactNumber: form.contactNumber?.value?.trim() || "Not provided",
-    details: form.details?.value?.trim() || "No additional details provided",
-  };
-
-  const subject = `JPTECH Inquiry: ${formData.projectName}`;
-  const body = [
-    `Project Name: ${formData.projectName}`,
-    `Service Type: ${formData.serviceType}`,
-    `Name: ${formData.name}`,
-    `Contact Number: ${formData.contactNumber}`,
-    `Project Details: ${formData.details}`,
-  ].join("\n");
-
-  const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=jptech67@gmail.com&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  const popup = window.open(gmailUrl, "_blank", "noopener,noreferrer");
-
-  if (!popup) {
-    window.location.href = gmailUrl;
-  }
-
   const statusBox = document.getElementById("contact-status");
+
   if (statusBox) {
-    statusBox.textContent = "Your inquiry has been prepared in Gmail. Please review and send it to complete the request.";
+    statusBox.textContent = "Sending your inquiry through JPTECH...";
     statusBox.className = "text-sm font-semibold text-[#855300] mt-2";
   }
 
-  showContactModal();
-  form.reset();
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch("/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: new URLSearchParams(formData).toString(),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP Error: ${response.status}`);
+    }
+
+    if (statusBox) {
+      statusBox.textContent =
+        "Thank you! Your inquiry has been sent successfully.";
+      statusBox.className =
+        "text-sm font-semibold text-emerald-600 mt-2";
+    }
+
+    showContactToast("Your inquiry has been sent successfully.");
+
+    form.reset();
+  } catch (error) {
+    console.error("Submission Error:", error);
+
+    if (statusBox) {
+      statusBox.textContent =
+        "Unable to send the inquiry. If you're running locally, Netlify Forms will not work.";
+      statusBox.className =
+        "text-sm font-semibold text-red-600 mt-2";
+    }
+
+    showContactToast(
+      "Form submission failed. Netlify Forms only work after deployment.",
+      true
+    );
+  }
 }
+
+window.handleContactSubmit = handleContactSubmit;
+window.closeContactToast = closeContactToast;
 
 function contact() {
   return `
@@ -100,7 +131,7 @@ function contact() {
             </div>
             <div>
               <span class="text-sm font-bold uppercase text-slate-400 block tracking-wider mb-0.5">Call Technical Support</span>
-              <a href="tel:+233242445491" class="text-sm font-black text-[#000615] tracking-tight hover:underline">+233 242445491</a>
+              <a href="tel:+233500019929" class="text-sm font-black text-[#000615] tracking-tight hover:underline">+233 500019929</a>
             </div>
           </div>
 
@@ -117,7 +148,7 @@ function contact() {
           </div>
 
           <!-- WhatsApp Green Corridor Launcher -->
-          <a href="https://wa.me/233242445491" target="_blank" class="w-full flex items-center justify-center gap-2 bg-[#1ed760] hover:bg-[#1abe54] text-white font-bold uppercase tracking-wider text-sm py-4 rounded-[0.25rem] transition-colors shadow-sm">
+          <a href="https://wa.me/233500019929" target="_blank" class="w-full flex items-center justify-center gap-2 bg-[#1ed760] hover:bg-[#1abe54] text-white font-bold uppercase tracking-wider text-sm py-4 rounded-[0.25rem] transition-colors shadow-sm">
             <span>💬</span> Message on WhatsApp
           </a>
         </div>
@@ -128,7 +159,9 @@ function contact() {
           
           <h3 class="text-2xl md:text-3xl font-black text-[#000615] uppercase tracking-tight mb-6">Inquiry Form</h3>
           
-          <form class="space-y-4" onsubmit="handleContactSubmit(event)">
+          <!-- Netlify Specific Form Attributes Added: data-netlify="true" and name="contact" -->
+                    <form class="space-y-4" name="contact" method="POST" data-netlify="true" netlify action="/"onsubmit="handleContactSubmit(event)">
+            <input type="hidden" name="form-name" value="contact" />
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <!-- Field: Project Name -->
@@ -186,33 +219,26 @@ function contact() {
         </div>
       </section>
 
-      <div id="contact-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-[#000615]/70 px-4">
-        <div class="bg-white rounded-[0.25rem] shadow-2xl max-w-md w-full p-6 border border-slate-200">
-          <div class="flex items-center justify-between mb-4">
-            <h4 class="text-xl font-black uppercase tracking-tight text-[#000615]">Email Draft Ready</h4>
-            <button type="button" onclick="closeContactModal()" class="text-slate-400 hover:text-[#000615] text-2xl leading-none">×</button>
-          </div>
-          <p class="text-sm md:text-base text-[#44474d] leading-relaxed mb-4">
-            Your inquiry has been prepared in your email app. Please review the message and click send to complete your request.
-          </p>
-          <button type="button" onclick="closeContactModal()" class="w-full bg-[#855300] hover:bg-[#684000] text-white font-bold uppercase tracking-wider text-sm py-3 rounded-[0.25rem] transition-colors">
-            Close
-          </button>
+      <div id="contact-toast" class="hidden fixed bottom-4 right-4 z-50 max-w-sm w-[calc(100%-2rem)] items-center justify-between gap-3 rounded-[0.25rem] border border-[#fea619] bg-[#000615] px-4 py-3 text-white shadow-2xl" role="status" aria-live="polite">
+        <div>
+          <p id="contact-toast-title" class="text-sm font-semibold">Inquiry sent</p>
+          <p id="contact-toast-body" class="text-xs text-slate-300">Your inquiry has been sent through JPTECH.</p>
         </div>
+        <button type="button" onclick="closeContactToast()" class="text-slate-300 hover:text-white text-lg leading-none">×</button>
       </div>
 
       <!-- BOTTOM INTERACTIVE CARTOGRAPHY AREA -->
       <section class="max-w-7xl mx-auto px-6 pb-20">
         <div class="relative rounded-[0.25rem] overflow-hidden border border-slate-200 shadow-sm bg-slate-200 h-80">
           
-          <!-- Mock Map Panel Collage Matrix matching image visual structure -->
+          <!-- Mock Map Panel Collage Matrix -->
           <div class="absolute inset-0 grid grid-cols-3 h-full w-full opacity-80">
             <div class="bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px] bg-slate-100 border-r border-slate-200/50"></div>
             <div class="bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px] bg-slate-100 border-r border-slate-200/50"></div>
             <div class="bg-[radial-gradient(#cbd5e1_1px,transparent_1px)] [background-size:16px_16px] bg-slate-100"></div>
           </div>
           
-          <!-- Abstract Line Layout overlays to simulate the grid from your mockup -->
+          <!-- Abstract Line Layout -->
           <div class="absolute inset-0 pointer-events-none opacity-40">
             <div class="absolute top-1/4 left-0 w-full h-0.5 bg-sky-400"></div>
             <div class="absolute top-2/3 left-0 w-full h-0.5 bg-emerald-400"></div>
